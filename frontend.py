@@ -1,8 +1,10 @@
 import streamlit as st
 import requests
 
-API_URL = "http://localhost:8000/predict"
+
+API_URL = "http://127.0.0.1:8000/predict"
 # Streamlit UI
+
 st.title(" Iris Flower Classifier")
 st.markdown("Enter flower dimensions to predict its species.")
 
@@ -32,4 +34,4 @@ if st.button("Predict"):
         else:
             st.error(f"Error: {result['error']}")
     except Exception as e:
-        st.error(f"⚠️ Could not connect to FastAPI server.\n\nError: {str(e)}")
+        st.error(f" Could not connect to FastAPI server.\n\nError: {str(e)}")
